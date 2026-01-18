@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>publisher Documentation</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 48px 24px;
+        font-family: Arial, sans-serif;
+        background: #0f172a;
+        color: #e2e8f0;
+      }
+      main {
+        max-width: 760px;
+        margin: 0 auto;
+      }
+      h1 {
+        margin: 0 0 12px;
+        font-size: 28px;
+      }
+      .intro {
+        font-size: 16px;
+        color: #e2e8f0;
+      }
+      p {
+        margin: 0 0 16px;
+        color: #cbd5f5;
+      }
+      ul {
+        margin: 12px 0 0;
+        padding-left: 18px;
+      }
+      a {
+        color: #93c5fd;
+      }
+      .section {
+        margin-top: 28px;
+      }
+      .muted {
+        color: #94a3b8;
+        font-size: 14px;
+        margin: 6px 0 0;
+      }
+      .code {
+        background: #0b1220;
+        border: 1px solid #1e293b;
+        border-radius: 10px;
+        padding: 16px;
+        white-space: pre-wrap;
+        word-break: break-word;
+        font-size: 13px;
+        line-height: 1.5;
+        color: #e2e8f0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>module/publisher - V8 module</h1>
+      <p class="intro">Publish the same article to multiple platforms through a single, lightweight module. It focuses on orchestration only, letting each platform module handle its own requirements.</p>
+      <p class="muted">Learn more at <a href="https://instago.ai" target="_blank" rel="noopener">https://instago.ai</a>.</p>
+      <div class="section">
+        <h2>Technical reference</h2>
+        <h1>module/publisher - V8 module</h1>
+<p>Publish the same article to multiple platforms through a single, lightweight module. It focuses on orchestration only, letting each platform module handle its own requirements.</p>
+<p>Learn more at https://instago.ai.</p>
+<h2>Technical reference</h2>
+<p>Exports:</p>
+<ul>
+<li><code>publish({ platforms, article })</code></li>
+</ul>
+<p>Usage:</p>
+<ul>
+<li><code>platforms</code> is an array of platform module names (for example, <code>[&#x27;devto&#x27;, &#x27;medium&#x27;]</code>).</li>
+<li><code>article</code> is an object passed through to each platform&#x27;s <code>publish()</code> call.</li>
+<li>Returns <code>{ ok, results }</code>, where <code>results</code> includes per-platform outcomes.</li>
+</ul>
+<p>Configuration:</p>
+<ul>
+<li>No required or optional <code>env</code> keys.</li>
+</ul>
+<p>Examples:</p>
+<pre class="code"><code>
+const publisher = require(&#x27;publisher@latest&#x27;);
+
+await publisher.publish({
+  platforms: [&#x27;devto&#x27;],
+  article: {
+    title: &#x27;Hello DEV&#x27;,
+    bodyMarkdown: &#x27;# Hello\nThis is an article.&#x27;,
+    tags: [&#x27;devto&#x27;, &#x27;automation&#x27;],
+    published: true
+  }
+});
+</code></pre>
+<pre class="code"><code>
+const publisher = require(&#x27;publisher@latest&#x27;);
+
+await publisher.publish({
+  platforms: [&#x27;devto&#x27;, &#x27;medium&#x27;],
+  article: {
+    title: &#x27;Hello DEV&#x27;,
+    bodyMarkdown: &#x27;# Hello\nThis is an article.&#x27;,
+    tags: [&#x27;devto&#x27;, &#x27;automation&#x27;],
+    published: true
+  }
+});
+</code></pre>
+      </div>
+      
+    </main>
+  </body>
+</html>

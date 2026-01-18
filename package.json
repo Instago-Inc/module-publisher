@@ -1,6 +1,6 @@
 {
   "name": "@instago/publisher",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Module publisher",
   "main": "index.js",
   "type": "commonjs",
@@ -12,6 +12,7 @@
   "files": [
     "index.js",
     "ReadMe.MD",
+    "env.json",
     "LICENSE"
   ]
 }
